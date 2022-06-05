@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Barryvdh\DomPDF\Facade\Pdf;
+
 use App\Http\Requests\CompaniesInsertRequest;
 use App\Http\Requests\CompaniesEditRequest;
 
 use App\Http\Traits\QueryCompanies;
+use App\Http\Traits\QueryEmployee;
 
 class CompaniesController extends Controller
 {
@@ -18,6 +21,7 @@ class CompaniesController extends Controller
      */
 
     use QueryCompanies;
+    use QueryEmployee;
 
     public function __construct()
     {
@@ -96,6 +100,15 @@ class CompaniesController extends Controller
     public function paginate(Request $request)
     {
         return $this->query_company_paginate($request);
+    }
+
+    public function pdf($id)
+    {
+        $company = $this->query_company_by_id($id);
+        $employees = $this->query_employee_by_company_id($id);
+
+        $pdf = PDF::loadView('pdf.employee', ['company' => $company, "employees" => $employees]);
+        return $pdf->download('employee.pdf');
     }
 
     function process_image($request, $name)

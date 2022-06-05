@@ -33,6 +33,11 @@ trait QueryEmployee {
         return Employee::where('id', $id)->first();
     }
 
+    public function query_employee_by_company_id($id)
+    {
+        return Employee::where('company_id', $id)->get();
+    }
+
     public function delete_employee($id) {
 
         $employee = Employee::where('id', $id);

@@ -29,6 +29,7 @@ Route::prefix('companies')->group(function () {
     Route::get('/add', [CompaniesController::class, 'add']);
     Route::get('/edit/{id}', [CompaniesController::class, 'edit']);
     Route::get('', [CompaniesController::class, 'index']);
+    Route::get('/pdf/{id}', [CompaniesController::class, 'pdf']);
 });
 
 Route::prefix('employees')->group(function () {

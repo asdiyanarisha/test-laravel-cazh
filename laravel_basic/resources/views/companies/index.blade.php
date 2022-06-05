@@ -39,6 +39,10 @@
                                         <button class="btn btn-danger" id="btn-delete" onclick="deleteAction({{ $company['id'] }})">
                                             Delete
                                         </button>
+                                        
+                                        <a href="companies/pdf/{{ $company['id'] }}" target="_blank" class="btn btn-info mt-1">
+                                            Export Employees
+                                        </a>
                                     </td>
                                 </tr>
                             @endforeach
