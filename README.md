@@ -28,3 +28,13 @@ php basic_php_3.php
 ```
 php basic_php_4.php
 ```
+
+## Bagian 2: Laravel Dasar
+
+Berikut ini command untuk running script requirement test
+
+```
+composer install
+```
+
+Untuk file pengerjaanya saya di direktori `export`
