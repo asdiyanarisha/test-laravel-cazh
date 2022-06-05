@@ -29,6 +29,7 @@ Route::middleware('auth:api')->post('companies/paginate', [CompaniesController::
 
 
 Route::middleware('auth:api')->post('employees/insert', [EmployeeController::class, 'insert'])->name('api-employees-insert');
+Route::middleware('auth:api')->post('employees/upload', [EmployeeController::class, 'upload'])->name('api-employees-insert');
 Route::middleware('auth:api')->post('employees/change', [EmployeeController::class, 'change'])->name('api-employees-change');
 Route::middleware('auth:api')->post('employees/delete', [EmployeeController::class, 'delete'])->name('api-employees-delete');
 Route::middleware('auth:api')->post('employees/paginate', [EmployeeController::class, 'paginate'])->name('api-employees-paginate');

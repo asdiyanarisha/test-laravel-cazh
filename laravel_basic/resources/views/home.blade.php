@@ -17,7 +17,7 @@
                 <div class="card-header">{{ __('Employees') }}</div>
 
                 <div class="card-body">
-                    <a href="/employees/add" class="btn btn-primary">To Employees Page</a>
+                    <a href="/employees" class="btn btn-primary">To Employees Page</a>
                 </div>
             </div>
         </div>
@@ -26,7 +26,7 @@
                 <div class="card-header">{{ __('Transactions') }}</div>
 
                 <div class="card-body">
-                    <a href="/transaction/add" class="btn btn-secondary">To Transactions Page</a>
+                    <a href="/transaction" class="btn btn-secondary">To Transactions Page</a>
                 </div>
             </div>
         </div>

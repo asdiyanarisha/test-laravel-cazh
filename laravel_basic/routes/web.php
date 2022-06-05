@@ -34,6 +34,7 @@ Route::prefix('companies')->group(function () {
 
 Route::prefix('employees')->group(function () {
     Route::get('/add', [EmployeeController::class, 'add']);
+    Route::get('/import', [EmployeeController::class, 'import']);
     Route::get('/edit/{id}', [EmployeeController::class, 'edit']);
     Route::get('', [EmployeeController::class, 'index']);
 });

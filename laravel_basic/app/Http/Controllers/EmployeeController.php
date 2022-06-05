@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
+
+use App\Imports\EmployeeImport;
 use App\Http\Requests\EmployeeInsertRequest;
 use App\Http\Requests\EmployeeEditRequest;
 
@@ -25,6 +28,11 @@ class EmployeeController extends Controller
     public function add()
     {
         return view('employees.add');
+    }
+
+    public function import()
+    {
+        return view('employees.import');
     }
 
     public function edit($id)
@@ -76,6 +84,13 @@ class EmployeeController extends Controller
         $this->update_employee($data);
         
         return response()->json(["msg" => "Sucessfully edited data"], 200);
+    }
+
+    public function upload(Request $request) 
+    {
+        Excel::import(new EmployeeImport, $request->file('file'));
+        
+        return redirect('/')->with('success', 'All good!');
     }
 
 

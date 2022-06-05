@@ -10,6 +10,9 @@
                     <a href="employees/add" class="btn btn-primary">
                         Add Employees
                     </a>
+                    <a href="employees/import" class="btn btn-success">
+                        Import Employees
+                    </a>
                     <table class="table">
                         <thead class="thead-light">
                             <tr>
