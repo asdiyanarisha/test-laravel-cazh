@@ -40,4 +40,23 @@ trait QueryCompanies {
         $company->delete();
     }
 
+    public function update_companies($data) {
+
+        $company = Company::where('id', $data['id'])->first();
+        
+        $company->name = $data['name'];
+        $company->website = $data['website'];
+        $company->balance = $data['balance'];
+        $company->email = $data['email'];
+        $company->logo = $data['path_logo'];
+
+        $company->save();
+    }
+
+    public function query_company_paginate($request)
+    {
+        $company = $request->search ? Company::where('name', 'LIKE', "%$request->search%") : new Company();
+        return $company->paginate(10, ['*'], 'page', $request->page)->toArray();
+    }
+
 }

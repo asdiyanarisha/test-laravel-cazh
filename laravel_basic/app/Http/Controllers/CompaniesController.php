@@ -93,6 +93,11 @@ class CompaniesController extends Controller
         return response()->json(["msg" => "Sucessfully deleted data"], 200);
     }
 
+    public function paginate(Request $request)
+    {
+        return $this->query_company_paginate($request);
+    }
+
     function process_image($request, $name)
     {
         $logo = $request->file('logo');
