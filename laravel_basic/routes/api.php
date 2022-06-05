@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CompaniesController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\TransactionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +31,8 @@ Route::middleware('auth:api')->post('companies/paginate', [CompaniesController::
 Route::middleware('auth:api')->post('employees/insert', [EmployeeController::class, 'insert'])->name('api-employees-insert');
 Route::middleware('auth:api')->post('employees/change', [EmployeeController::class, 'change'])->name('api-employees-change');
 Route::middleware('auth:api')->post('employees/delete', [EmployeeController::class, 'delete'])->name('api-employees-delete');
+Route::middleware('auth:api')->post('employees/paginate', [EmployeeController::class, 'paginate'])->name('api-employees-paginate');
+
+
+
+Route::middleware('auth:api')->post('transaction/insert', [TransactionController::class, 'insert'])->name('api-employees-insert');

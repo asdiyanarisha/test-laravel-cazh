@@ -36,7 +36,13 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <li>
-                            <a class="btn btn-info" href="{{ url('companies') }}">Companies</a>
+                            <a class="btn btn-link" href="{{ url('companies') }}">Companies</a>
+                        </li>
+                        <li>
+                            <a class="btn btn-link" href="{{ url('employees') }}">Employees</a>
+                        </li>
+                        <li>
+                            <a class="btn btn-link" href="{{ url('transaction') }}">Transactions</a>
                         </li>
                     </ul>
 

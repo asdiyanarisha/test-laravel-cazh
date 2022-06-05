@@ -52,4 +52,22 @@ trait QueryEmployee {
         $employee->save();
     }
 
+
+    public function query_employee_paginate($request)
+    {
+        $q = $request->q;
+        $employee = Employee::where('company_id', $q['company_id']);
+        $employee = $q['term'] ? Employee::where('name', 'LIKE', $q['term']) : $employee;
+        return $employee->paginate(10, ['*'], 'page', $request->page)->toArray();
+    }
+
+    public function update_balance_employee($id, $balance) {
+
+        $company = Employee::where('id', $id)->first();
+        
+        $company->balance = $balance;
+
+        $company->save();
+    }
+
 }

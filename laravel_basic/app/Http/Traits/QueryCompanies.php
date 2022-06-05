@@ -59,4 +59,13 @@ trait QueryCompanies {
         return $company->paginate(10, ['*'], 'page', $request->page)->toArray();
     }
 
+    public function update_balance_companies($id, $balance) {
+
+        $company = Company::where('id', $id)->first();
+        
+        $company->balance = $balance;
+
+        $company->save();
+    }
+
 }

@@ -21,6 +21,15 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">{{ __('Transactions') }}</div>
+
+                <div class="card-body">
+                    <a href="/transaction/add" class="btn btn-secondary">To Transactions Page</a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 @endsection

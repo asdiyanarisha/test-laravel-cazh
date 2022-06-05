@@ -77,4 +77,10 @@ class EmployeeController extends Controller
         
         return response()->json(["msg" => "Sucessfully edited data"], 200);
     }
+
+
+    public function paginate(Request $request)
+    {
+        return $this->query_employee_paginate($request);
+    }
 }

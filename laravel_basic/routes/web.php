@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CompaniesController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\TransactionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,4 +35,9 @@ Route::prefix('employees')->group(function () {
     Route::get('/add', [EmployeeController::class, 'add']);
     Route::get('/edit/{id}', [EmployeeController::class, 'edit']);
     Route::get('', [EmployeeController::class, 'index']);
+});
+
+Route::prefix('transaction')->group(function () {
+    Route::get('/add', [TransactionController::class, 'add']);
+    Route::get('', [TransactionController::class, 'index']);
 });
